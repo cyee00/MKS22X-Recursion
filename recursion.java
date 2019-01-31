@@ -11,20 +11,20 @@ public class recursion{
     //Overloads sqrt(double,double)
     private static double sqrt(double n, double guess, double tolerance){
       if (!acceptable(n,guess,tolerance)){
-        return sqrt(n,((n/guess+guess)/2));
+        return sqrt(n,((n/guess+guess)/2),tolerance);
       }
       return guess;
     }
 
     //Helper function that tests if the guess^2 is close enough to the square.
     private static boolean acceptable(double accepted, double guess, double tolerance){
-      return (((Math.abs((guess*guess)-accepted))/accepted)<=tolerance)||accepted==0;
+      return (((Math.abs((guess*guess)-accepted))/accepted)<=0.0001)||accepted==0;
     }
 
     public static void main(String[]args){
-      System.out.println(""+sqrt(0,0.000000001));
-        //System.out.println(""+sqrt(1,0.00000001));
+      System.out.println(""+sqrt(0,0.0001));
+        System.out.println(""+sqrt(1,0.0001));
 
-          //System.out.println(""+sqrt(25,0.000001));
+          System.out.println(""+sqrt(25,0.0001));
     }
 }
