@@ -27,21 +27,29 @@ public class recursion{
      *precondition: n is non-negative
      */
     public static int fib(int n){
-      return fib(n,0,0);
+      return fib(n,0,1);
     }
 
-    //Helper function that takes in the previous term and the current sum
-    private static int fib(int n, ){
+    //Helper function that uses tail recursion
+    private static int fib(int n, int prev1, int prev2){
       if (n>0){
-        return fib()
+        return fib(n-1,prev2,prev1+prev2);
       }else{
-        return sum; //base case
+        return prev2; //base case
       }
     }
 
     public static void main(String[]args){
+
+      //Testing sqrt
       System.out.println(""+sqrt(0,0.0001));
-        System.out.println(""+sqrt(1,0.0001));
-          System.out.println(""+sqrt(25,0.0001));
+      System.out.println(""+sqrt(1,0.0001));
+      System.out.println(""+sqrt(25,0.0001));
+
+      //Testing fib
+      System.out.println(""+fib(0));
+      System.out.println(""+fib(1));
+      System.out.println(""+fib(5));
+
     }
 }
