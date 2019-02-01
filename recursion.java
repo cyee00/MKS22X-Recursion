@@ -1,4 +1,5 @@
 public class recursion{
+
   /*Recursively find the sqrt using Newton's approximation
      *tolerance is the allowed percent error the squared answer is away from n.
      *precondition: n is non-negative
@@ -21,10 +22,26 @@ public class recursion{
       return (((Math.abs((guess*guess)-accepted))/accepted)<=0.0001)||accepted==0;
     }
 
+    /*Recursively find the n'th fibbonaci number in linear time
+     *fib(0) = 0; fib(1) = 1; fib(5) = 5
+     *precondition: n is non-negative
+     */
+    public static int fib(int n){
+      return fib(n,0,0);
+    }
+
+    //Helper function that takes in the previous term and the current sum
+    private static int fib(int n, ){
+      if (n>0){
+        return fib()
+      }else{
+        return sum; //base case
+      }
+    }
+
     public static void main(String[]args){
       System.out.println(""+sqrt(0,0.0001));
         System.out.println(""+sqrt(1,0.0001));
-
           System.out.println(""+sqrt(25,0.0001));
     }
 }
