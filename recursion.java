@@ -35,7 +35,7 @@ public class recursion{
       if (n>0){
         return fib(n-1,prev2,prev1+prev2);
       }else{
-        return prev2; //base case
+        return prev1; //base case
       }
     }
 
@@ -50,6 +50,7 @@ public class recursion{
       System.out.println(""+fib(0));
       System.out.println(""+fib(1));
       System.out.println(""+fib(5));
+      System.out.println(""+fib(9));
 
     }
 }
