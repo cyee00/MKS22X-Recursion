@@ -43,15 +43,20 @@ public class recursion{
 
     public static ArrayList<Integer> makeAllSums(int n){
       ArrayList<Integer> ans=new ArrayList<Integer>();
-      makeAllSums(n,ans);
+      makeAllSums(n,0,true,ans);
+      makeAllSums(n,0,false,ans);
       return ans;
     }
 
-    private static void makeAllSums(int n,ArrayList<Integer> ans){
+    private static void makeAllSums(int n,int sum,boolean include,ArrayList<Integer> ans){
       if (n>0){
-        makeAllSums(n-1,ans);
+        if (include){
+          sum+=n;//if you haven't reached 0 yet, there's still more numbers to add to the sum
+        }
+        makeAllSums(n-1,sum,true,ans);
+        makeAllSums(n-1,sum,false,ans);
       } else{
-        ans.add(n);
+        ans.add(sum);//when the # you're at reaches 0, add the sum into the ArrayList
       }
     }
 
