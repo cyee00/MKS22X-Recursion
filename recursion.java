@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class recursion{
 
   /*Recursively find the sqrt using Newton's approximation
@@ -36,6 +38,20 @@ public class recursion{
         return fib(n-1,prev2,prev1+prev2);
       }else{
         return prev1; //base case
+      }
+    }
+
+    public static ArrayList<Integer> makeAllSums(int n){
+      ArrayList<Integer> ans=new ArrayList<Integer>();
+      makeAllSums(n,ans);
+      return ans;
+    }
+
+    private static void makeAllSums(int n,ArrayList<Integer> ans){
+      if (n>0){
+        makeAllSums(n-1,ans);
+      } else{
+        ans.add(n);
       }
     }
 
